@@ -2,8 +2,9 @@ import React from 'react';
 import { Props } from './types/Good';
 import './App.scss';
 
-export const GoodsList: React.FC<Props> = React.memo(({ goods }) => {
-
+export const GoodsList: React.FC<Props> = React.memo(function GoodsList({
+  goods,
+}) {
   return (
     <ul>
       {goods.map(good => (
@@ -14,4 +15,3 @@ export const GoodsList: React.FC<Props> = React.memo(({ goods }) => {
     </ul>
   );
 });
-
