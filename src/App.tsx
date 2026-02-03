@@ -12,7 +12,7 @@ export const App: React.FC = () => {
   useEffect(() => {
     getAll()
       .then(setGoods)
-      .catch(() => setError('error'));
+      .catch((err => setError(err.message)));
   }, []);
 
   const { all, five, red } = FILTER;
@@ -33,18 +33,6 @@ export const App: React.FC = () => {
     }
   };
 
-  /* const handleGetAll = () => {
-    getAll().then(setGoods).catch(setError);
-  };
-
-  const handleGetFive = () => {
-    get5First().then(setGoods).catch(setError);
-  };
-
-  const handleGetRed = () => {
-    getRed().then(setGoods).catch(setError);
-
-  }; */
 
   return (
     <div className="App">
